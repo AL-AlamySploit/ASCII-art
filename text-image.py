@@ -22,12 +22,25 @@ def pixels_to_ascii(image):
   characters = "".join([ASCII_CHARS[pixel//25] for pixel in pixels])
   return(characters)
 
-def main():
+def main(new_width=100):
   #attempt to open image from user-input
   path = input ("Enter a valid pathname to an image :\n")
   try:
     image =PIL.Image.open(path)
 except:
   print (path, "is not a valid pathname to an image.")
+ # convert image to ASCII
+  new_image_data = pixels_to_ascii(grayify(resize_image(image)))
+  
+  #format
+  pixel_count = len(new_image_data)
+  ascii_image = "\n".join(new_image_data[i:(i+new_width)] for i in range(0, pixel_count, new_width))
+  
+  # print result
+  print (ascii_image)
+  
+  #save result to "ascii_image.txt"
+  with open("ascii_image.txt", "w") as f:
+    f.write(ascii_image)
   
   main()
