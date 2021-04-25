@@ -43,4 +43,4 @@ def main(new_width=100):
   with open("ascii_image.txt", "w") as f:
     f.write(ascii_image)
   
-  main()
+  main(new_width=100)
