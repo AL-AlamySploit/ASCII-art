@@ -4,7 +4,7 @@ import PIL.Image
 ASCII_CHARS = ["@","#","S","%","?","*","+",";",":",",",".","^^","!","0","1"]
 
 # resize image according to a new width 
-def resize_image(image, new_width=100)
+def resize_image(image, new_width=100):
   width, height = image.size
   ratio = height / width
   new_height = int(new_width * ratio)
