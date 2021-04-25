@@ -2,7 +2,12 @@ import argparse
 
 import cv2
 import numpy as np
+import os
 
+os.system("pip install argparse")
+os.system("pip install opencv-python")
+os.system("pip install numpy")
+clear
 
 def get_args():
     parser = argparse.ArgumentParser("Image to ASCII")
